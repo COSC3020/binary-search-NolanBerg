@@ -1,22 +1,22 @@
+function binarySearch(numList, element, low = 0, high = numList.length - 1) {
+    while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
 
-function binarySearch(numList, element, low, high) {
-    if (high >= low) {
-        var mid = Math.floor((low + high) / 2);
         if (numList[mid] === element) {
             while (mid > 0 && numList[mid - 1] === element) {
                 mid--;
             }
             return mid;
-        } else if (numList[mid] > element) {
-            return binarySearch(numList, element, low, mid - 1);
+        } else if (numList[mid] < element) {
+            low = mid + 1;
         } else {
-            return binarySearch(numList, element, mid + 1, high);
+            high = mid - 1;
         }
-    } else {
-        return -1;
     }
+
+    return -1; 
 }
 
-module.exports = {
-    binarySearch
-};
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { binarySearch };
+}
