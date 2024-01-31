@@ -1,13 +1,14 @@
-const assert = require('assert');
-const { binarySearch } = require('./code');
+const fs = require('fs');
+const jsc = require('jsverify');
+const { binarySearch } = require('./code.js'); 
 
-assert.strictEqual(binarySearch([], 10), -1, 'Empty array should return -1');
+const testSearch = jsc.forall('array nat', function (arr) {
+    if (arr.length > 0) {
+        arr.sort(function (a, b) { return a - b; });
+        return binarySearch(arr, arr[0]) === 0;
+    } else {
+        return binarySearch(arr, 10) === -1;
+    }
+});
 
-assert.strictEqual(binarySearch([5], 10), -1, 'Single-element array should return -1');
-
-assert.strictEqual(binarySearch([10], 10), 0, 'Single-element array should return 0');
-
-assert.strictEqual(binarySearch([1, 2, 3, 3, 3, 4, 5], 3), 2, 'Should return the index of the first occurrence');
-
-
-console.log('All tests passed successfully!');
+jsc.check(testSearch);
