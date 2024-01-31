@@ -1,10 +1,4 @@
 function binarySearch(numList, element, low = 0, high = numList.length - 1) {
-    if (numList.length === 0){
-        return -1;
-    }
-    if (numList.length === 1 && numList[0] === element){
-        return 0;
-    }
     while (low <= high) {
         const mid = Math.floor((low + high) / 2);
 
