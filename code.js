@@ -1,3 +1,4 @@
+
 function binarySearch(numList, element, low, high) {
     if (high >= low) {
         var mid = Math.floor((low + high) / 2);
@@ -11,8 +12,6 @@ function binarySearch(numList, element, low, high) {
         } else {
             return binarySearch(numList, element, mid + 1, high);
         }
-    } else if (numList.length === 1 && numList[0] === element) {
-        return 0;
     } else {
         return -1;
     }
