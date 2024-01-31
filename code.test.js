@@ -1,4 +1,3 @@
-const fs = require('fs');
 const jsc = require('jsverify');
 const { binarySearch } = require('./code.js'); 
 
