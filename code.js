@@ -14,7 +14,7 @@ function binarySearch(numList, element, low = 0, high = numList.length - 1) {
         }
     }
 
-    return `[${firstOccurrence}]`;
+    return firstOccurrence;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
