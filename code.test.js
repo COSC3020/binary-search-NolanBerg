@@ -10,4 +10,4 @@ const testSearch = jsc.forall('array nat', function (arr) {
     }
 });
 
-jsc.check(testSearch)
+jsc.assert(testSearch);
