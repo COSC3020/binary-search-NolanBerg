@@ -8,7 +8,7 @@ not there.
 Use the template in `code.js`. The tests in `code.test.js` will be run
 automatically every time you push to Github; if they pass you are done.
 
-RESOURCES USED: Originally coded simple binarysearch in python and used ai to convert to js where function takes in sorted array and searches for first occurence of element. Below is python code to compute binary search without testing
+RESOURCES USED: Originally coded in python and used ai to convert to js where function takes in sorted array and searches for first occurence of element. Below is python code I used to compute binary search without testing
 
 def binarySearch(num_list, element, low, high):
     
